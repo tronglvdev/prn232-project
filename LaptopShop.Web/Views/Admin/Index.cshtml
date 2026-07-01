@@ -1,0 +1,54 @@
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Dashboard</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Thống kê</li>
+    </ol>
+    <div class="row">
+        <div class="col-xl-4 col-md-6">
+            <div class="card bg-primary text-white mb-4">
+                <div class="card-body">Số lượng User (@ViewBag.CountUsers)</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="/Admin/User">View Details</a>
+                    <div class="small text-white">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+            <div class="card bg-danger text-white mb-4">
+                <div class="card-body">Số lượng Product (@ViewBag.CountProducts)</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="/Admin/Product">View Details</a>
+                    <div class="small text-white">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+            <div class="card bg-success text-white mb-4">
+                <div class="card-body">Số lượng Order (@ViewBag.CountOrders)</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="/Admin/Order">View Details</a>
+                    <div class="small text-white">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="/admin/js/chart-area-demo.js"></script>
+    <script src="/admin/js/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <script src="/admin/js/datatables-simple-demo.js"></script>
+}

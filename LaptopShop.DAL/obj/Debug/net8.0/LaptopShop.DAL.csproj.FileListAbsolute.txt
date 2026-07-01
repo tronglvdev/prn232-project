@@ -1,0 +1,14 @@
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/bin/Debug/net8.0/LaptopShop.DAL.deps.json
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/bin/Debug/net8.0/LaptopShop.DAL.runtimeconfig.json
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/bin/Debug/net8.0/LaptopShop.DAL.dll
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/bin/Debug/net8.0/LaptopShop.DAL.pdb
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/LaptopShop.DAL.csproj.AssemblyReference.cache
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/LaptopShop.DAL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/LaptopShop.DAL.AssemblyInfoInputs.cache
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/LaptopShop.DAL.AssemblyInfo.cs
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/LaptopShop.DAL.csproj.CoreCompileInputs.cache
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/LaptopShop.DAL.dll
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/refint/LaptopShop.DAL.dll
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/LaptopShop.DAL.pdb
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/LaptopShop.DAL.genruntimeconfig.cache
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/ref/LaptopShop.DAL.dll

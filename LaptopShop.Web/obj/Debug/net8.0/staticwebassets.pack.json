@@ -1,0 +1,649 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/obj/Debug/net8.0/scopedcss/projectbundle/LaptopShop.Web.bundle.scp.css",
+      "PackagePath": "staticwebassets/LaptopShop.Web.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/admin/css/demo.css",
+      "PackagePath": "staticwebassets/admin/css/demo.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/admin/css/styles.css",
+      "PackagePath": "staticwebassets/admin/css/styles.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/admin/js/chart-area-demo.js",
+      "PackagePath": "staticwebassets/admin/js/chart-area-demo.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/admin/js/chart-bar-demo.js",
+      "PackagePath": "staticwebassets/admin/js/chart-bar-demo.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/admin/js/chart-pie-demo.js",
+      "PackagePath": "staticwebassets/admin/js/chart-pie-demo.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/admin/js/datatables-demo.js",
+      "PackagePath": "staticwebassets/admin/js/datatables-demo.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/admin/js/datatables-simple-demo.js",
+      "PackagePath": "staticwebassets/admin/js/datatables-simple-demo.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/admin/js/scripts.js",
+      "PackagePath": "staticwebassets/admin/js/scripts.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/client/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/css/style.css",
+      "PackagePath": "staticwebassets/client/css/style.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/avatar.jpg",
+      "PackagePath": "staticwebassets/client/img/avatar.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/baner-1.png",
+      "PackagePath": "staticwebassets/client/img/baner-1.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/banner-fruits.jpg",
+      "PackagePath": "staticwebassets/client/img/banner-fruits.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/best-product-1.jpg",
+      "PackagePath": "staticwebassets/client/img/best-product-1.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/best-product-2.jpg",
+      "PackagePath": "staticwebassets/client/img/best-product-2.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/best-product-3.jpg",
+      "PackagePath": "staticwebassets/client/img/best-product-3.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/best-product-4.jpg",
+      "PackagePath": "staticwebassets/client/img/best-product-4.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/best-product-5.jpg",
+      "PackagePath": "staticwebassets/client/img/best-product-5.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/best-product-6.jpg",
+      "PackagePath": "staticwebassets/client/img/best-product-6.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/cart-page-header-img.jpg",
+      "PackagePath": "staticwebassets/client/img/cart-page-header-img.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/featur-1.jpg",
+      "PackagePath": "staticwebassets/client/img/featur-1.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/featur-2.jpg",
+      "PackagePath": "staticwebassets/client/img/featur-2.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/featur-3.jpg",
+      "PackagePath": "staticwebassets/client/img/featur-3.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/fruite-item-1.png",
+      "PackagePath": "staticwebassets/client/img/fruite-item-1.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/fruite-item-2.png",
+      "PackagePath": "staticwebassets/client/img/fruite-item-2.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/fruite-item-3.jpg",
+      "PackagePath": "staticwebassets/client/img/fruite-item-3.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/fruite-item-4.jpg",
+      "PackagePath": "staticwebassets/client/img/fruite-item-4.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/fruite-item-5.jpg",
+      "PackagePath": "staticwebassets/client/img/fruite-item-5.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/fruite-item-6.jpg",
+      "PackagePath": "staticwebassets/client/img/fruite-item-6.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/hero-img-1.png",
+      "PackagePath": "staticwebassets/client/img/hero-img-1.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/hero-img-2.png",
+      "PackagePath": "staticwebassets/client/img/hero-img-2.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/hero-img-3.png",
+      "PackagePath": "staticwebassets/client/img/hero-img-3.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/hero-img.png",
+      "PackagePath": "staticwebassets/client/img/hero-img.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/payment.png",
+      "PackagePath": "staticwebassets/client/img/payment.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/single-item.jpg",
+      "PackagePath": "staticwebassets/client/img/single-item.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/testimonial-1.jpg",
+      "PackagePath": "staticwebassets/client/img/testimonial-1.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/vegetable-item-1.jpg",
+      "PackagePath": "staticwebassets/client/img/vegetable-item-1.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/vegetable-item-2.jpg",
+      "PackagePath": "staticwebassets/client/img/vegetable-item-2.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/vegetable-item-3.png",
+      "PackagePath": "staticwebassets/client/img/vegetable-item-3.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/vegetable-item-4.jpg",
+      "PackagePath": "staticwebassets/client/img/vegetable-item-4.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/vegetable-item-5.jpg",
+      "PackagePath": "staticwebassets/client/img/vegetable-item-5.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/img/vegetable-item-6.jpg",
+      "PackagePath": "staticwebassets/client/img/vegetable-item-6.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/js/main.js",
+      "PackagePath": "staticwebassets/client/js/main.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/easing/easing.js",
+      "PackagePath": "staticwebassets/client/lib/easing/easing.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/easing/easing.min.js",
+      "PackagePath": "staticwebassets/client/lib/easing/easing.min.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/lightbox/css/lightbox.min.css",
+      "PackagePath": "staticwebassets/client/lib/lightbox/css/lightbox.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/lightbox/images/close.png",
+      "PackagePath": "staticwebassets/client/lib/lightbox/images/close.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/lightbox/images/loading.gif",
+      "PackagePath": "staticwebassets/client/lib/lightbox/images/loading.gif"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/lightbox/images/next.png",
+      "PackagePath": "staticwebassets/client/lib/lightbox/images/next.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/lightbox/images/prev.png",
+      "PackagePath": "staticwebassets/client/lib/lightbox/images/prev.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/lightbox/js/lightbox.min.js",
+      "PackagePath": "staticwebassets/client/lib/lightbox/js/lightbox.min.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/owlcarousel/LICENSE",
+      "PackagePath": "staticwebassets/client/lib/owlcarousel"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/owlcarousel/assets/ajax-loader.gif",
+      "PackagePath": "staticwebassets/client/lib/owlcarousel/assets/ajax-loader.gif"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/owlcarousel/assets/owl.carousel.css",
+      "PackagePath": "staticwebassets/client/lib/owlcarousel/assets/owl.carousel.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/owlcarousel/assets/owl.carousel.min.css",
+      "PackagePath": "staticwebassets/client/lib/owlcarousel/assets/owl.carousel.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/owlcarousel/assets/owl.theme.default.css",
+      "PackagePath": "staticwebassets/client/lib/owlcarousel/assets/owl.theme.default.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/owlcarousel/assets/owl.theme.default.min.css",
+      "PackagePath": "staticwebassets/client/lib/owlcarousel/assets/owl.theme.default.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/owlcarousel/assets/owl.theme.green.css",
+      "PackagePath": "staticwebassets/client/lib/owlcarousel/assets/owl.theme.green.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/owlcarousel/assets/owl.theme.green.min.css",
+      "PackagePath": "staticwebassets/client/lib/owlcarousel/assets/owl.theme.green.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/owlcarousel/assets/owl.video.play.png",
+      "PackagePath": "staticwebassets/client/lib/owlcarousel/assets/owl.video.play.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/owlcarousel/owl.carousel.js",
+      "PackagePath": "staticwebassets/client/lib/owlcarousel/owl.carousel.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/owlcarousel/owl.carousel.min.js",
+      "PackagePath": "staticwebassets/client/lib/owlcarousel/owl.carousel.min.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/waypoints/links.php",
+      "PackagePath": "staticwebassets/client/lib/waypoints/links.php"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/client/lib/waypoints/waypoints.min.js",
+      "PackagePath": "staticwebassets/client/lib/waypoints/waypoints.min.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/css/demo.css",
+      "PackagePath": "staticwebassets/css/demo.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/css/styles.css",
+      "PackagePath": "staticwebassets/css/styles.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1773599145370-Screenshot 2026-02-21 at 17.37.47.png",
+      "PackagePath": "staticwebassets/images/avatar/1773599145370-Screenshot 2026-02-21 at 17.37.47.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1773599230771-Screenshot 2026-02-21 at 17.37.47.png",
+      "PackagePath": "staticwebassets/images/avatar/1773599230771-Screenshot 2026-02-21 at 17.37.47.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1773599277179-Screenshot 2026-02-21 at 17.37.47.png",
+      "PackagePath": "staticwebassets/images/avatar/1773599277179-Screenshot 2026-02-21 at 17.37.47.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1774009639481-3.jpg",
+      "PackagePath": "staticwebassets/images/avatar/1774009639481-3.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1774009673074-1.jpg",
+      "PackagePath": "staticwebassets/images/avatar/1774009673074-1.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1777283416832-3.jpg",
+      "PackagePath": "staticwebassets/images/avatar/1777283416832-3.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1777283424849-0.webp",
+      "PackagePath": "staticwebassets/images/avatar/1777283424849-0.webp"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1777283562944-1.jpg",
+      "PackagePath": "staticwebassets/images/avatar/1777283562944-1.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1777283824125-0.webp",
+      "PackagePath": "staticwebassets/images/avatar/1777283824125-0.webp"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1777285727978-0.webp",
+      "PackagePath": "staticwebassets/images/avatar/1777285727978-0.webp"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1777285733462-2.webp",
+      "PackagePath": "staticwebassets/images/avatar/1777285733462-2.webp"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1777285925478-3.jpg",
+      "PackagePath": "staticwebassets/images/avatar/1777285925478-3.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/1777301468600-1.jpg",
+      "PackagePath": "staticwebassets/images/avatar/1777301468600-1.jpg"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/avatar/eric.png",
+      "PackagePath": "staticwebassets/images/avatar/eric.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/product/1711078092373-asus-01.png",
+      "PackagePath": "staticwebassets/images/product/1711078092373-asus-01.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/product/1711078452562-dell-01.png",
+      "PackagePath": "staticwebassets/images/product/1711078452562-dell-01.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/product/1711079073759-lenovo-01.png",
+      "PackagePath": "staticwebassets/images/product/1711079073759-lenovo-01.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/product/1711079496409-asus-02.png",
+      "PackagePath": "staticwebassets/images/product/1711079496409-asus-02.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/product/1711079954090-apple-01.png",
+      "PackagePath": "staticwebassets/images/product/1711079954090-apple-01.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/product/1711080386941-lg-01.png",
+      "PackagePath": "staticwebassets/images/product/1711080386941-lg-01.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/product/1711080787179-apple-02.png",
+      "PackagePath": "staticwebassets/images/product/1711080787179-apple-02.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/product/1711080948771-acer-01.png",
+      "PackagePath": "staticwebassets/images/product/1711080948771-acer-01.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/product/1711081080930-asus-03.png",
+      "PackagePath": "staticwebassets/images/product/1711081080930-asus-03.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/images/product/1711081278418-dell-02.png",
+      "PackagePath": "staticwebassets/images/product/1711081278418-dell-02.png"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/js/chart-area-demo.js",
+      "PackagePath": "staticwebassets/js/chart-area-demo.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/js/chart-bar-demo.js",
+      "PackagePath": "staticwebassets/js/chart-bar-demo.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/js/chart-pie-demo.js",
+      "PackagePath": "staticwebassets/js/chart-pie-demo.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/js/datatables-demo.js",
+      "PackagePath": "staticwebassets/js/datatables-demo.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/js/datatables-simple-demo.js",
+      "PackagePath": "staticwebassets/js/datatables-simple-demo.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/js/scripts.js",
+      "PackagePath": "staticwebassets/js/scripts.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/LICENSE",
+      "PackagePath": "staticwebassets/lib/bootstrap"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery-validation/LICENSE.md",
+      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery/dist/jquery.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery/dist/jquery.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Id": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/wwwroot/lib/jquery/dist/jquery.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.LaptopShop.Web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.LaptopShop.Web.props",
+      "PackagePath": "build\\LaptopShop.Web.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.LaptopShop.Web.props",
+      "PackagePath": "buildMultiTargeting\\LaptopShop.Web.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.LaptopShop.Web.props",
+      "PackagePath": "buildTransitive\\LaptopShop.Web.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,68 @@
+@model List<LaptopShop.Web.Models.CartItem>
+@{
+    ViewData["Title"] = "Thanh toán";
+}
+
+<div class="container-fluid py-5 mt-5">
+    <div class="container py-5">
+        <h1 class="mb-4">Thông tin thanh toán</h1>
+        <div class="row g-5">
+            <div class="col-md-12 col-lg-6 col-xl-7">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Sản phẩm</th>
+                                <th scope="col">Tên</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Số lượng</th>
+                                <th scope="col">Tổng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">
+                                        <img src="/images/product/@(string.IsNullOrEmpty(item.Image) ? "default.png" : item.Image)" class="img-fluid rounded-circle" style="width: 50px; height: 50px;" alt="">
+                                    </th>
+                                    <td>@item.ProductName</td>
+                                    <td>@item.Price.ToString("N0") đ</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@((item.Price * item.Quantity).ToString("N0")) đ</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-6 col-xl-5">
+                <form action="/Cart/PlaceOrder" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Tên người nhận</label>
+                        <input type="text" class="form-control" name="receiverName" value="@(ViewBag.User?.FullName)" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Địa chỉ cụ thể</label>
+                        <input type="text" class="form-control" name="receiverAddress" value="@(ViewBag.User?.Address)" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Số điện thoại</label>
+                        <input type="text" class="form-control" name="receiverPhone" value="@(ViewBag.User?.Phone)" required />
+                    </div>
+
+                    <div class="bg-light p-4 rounded">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>Tổng cộng:</h5>
+                            <h5 class="text-primary">
+                                @Model.Sum(x => x.Price * x.Quantity).ToString("N0") đ
+                            </h5>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-3 text-uppercase">Đặt hàng ngay</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

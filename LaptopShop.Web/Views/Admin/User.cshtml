@@ -1,0 +1,91 @@
+@model List<LaptopShop.Web.Models.DTOs.UserDto>
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Manage Users";
+}
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Manage Users</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Admin">DashBoard</a></li>
+        <li class="breadcrumb-item active">Users</li>
+    </ol>
+    <div class="container mt-5">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                @TempData["Message"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <div class="d-flex justify-content-between">
+                    <h1>Table User</h1>
+                    <a href="/Admin/User/Create" class="btn btn-primary">Create user</a>
+                </div>
+                <hr />
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        Danh sách tài khoản
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Email</th>
+                                    <th>Full Name</th>
+                                    <th>Role</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var u in Model)
+                                {
+                                    <tr>
+                                        <td>@u.Id</td>
+                                        <td>@u.Email</td>
+                                        <td>@u.FullName</td>
+                                        <td>@u.RoleName</td>
+                                        <td>
+                                            <a href="/Admin/User/View/@u.Id" class="btn btn-success">View</a>
+                                            <a href="/Admin/User/Update/@u.Id" class="btn btn-warning mx-2">Update</a>
+                                            <a href="/Admin/User/Delete/@u.Id" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="@(1 == ViewBag.CurrentPage ? "disabled page-link" : "page-link")"
+                                       href="/Admin/User?page=@(ViewBag.CurrentPage - 1)" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                @for (int i = 0; i < ViewBag.TotalPages; i++)
+                                {
+                                    <li class="page-item">
+                                        <a class="@((i + 1) == ViewBag.CurrentPage ? "active page-link" : "page-link")"
+                                           href="/Admin/User?page=@(i + 1)">
+                                            @(i + 1)
+                                        </a>
+                                    </li>
+                                }
+                                <li class="page-item">
+                                    <a class="@(ViewBag.TotalPages == ViewBag.CurrentPage ? "disabled page-link" : "page-link")"
+                                       href="/Admin/User?page=@(ViewBag.CurrentPage + 1)" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

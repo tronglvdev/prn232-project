@@ -1,0 +1,91 @@
+@model List<LaptopShop.Web.Models.DTOs.ProductDto>
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Manage Products";
+}
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Manage Products</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Admin">DashBoard</a></li>
+        <li class="breadcrumb-item active">Products</li>
+    </ol>
+    <div class="container mt-5">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                @TempData["Message"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <div class="d-flex justify-content-between">
+                    <h1>Table Product</h1>
+                    <a href="/Admin/Product/Create" class="btn btn-primary">Create product</a>
+                </div>
+                <hr />
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        Danh sách sản phẩm
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Factory</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var product in Model)
+                                {
+                                    <tr>
+                                        <td>@product.Id</td>
+                                        <td>@product.Name</td>
+                                        <td>@product.Price.ToString("N0") đ</td>
+                                        <td>@product.Factory</td>
+                                        <td>
+                                            <a href="/Admin/Product/View/@product.Id" class="btn btn-success">View</a>
+                                            <a href="/Admin/Product/Update/@product.Id" class="btn btn-warning mx-2">Update</a>
+                                            <a href="/Admin/Product/Delete/@product.Id" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="@(1 == ViewBag.CurrentPage ? "disabled page-link" : "page-link")"
+                                       href="/Admin/Product?page=@(ViewBag.CurrentPage - 1)" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                @for (int i = 0; i < ViewBag.TotalPages; i++)
+                                {
+                                    <li class="page-item">
+                                        <a class="@((i + 1) == ViewBag.CurrentPage ? "active page-link" : "page-link")"
+                                           href="/Admin/Product?page=@(i + 1)">
+                                            @(i + 1)
+                                        </a>
+                                    </li>
+                                }
+                                <li class="page-item">
+                                    <a class="@(ViewBag.TotalPages == ViewBag.CurrentPage ? "disabled page-link" : "page-link")"
+                                       href="/Admin/Product?page=@(ViewBag.CurrentPage + 1)" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

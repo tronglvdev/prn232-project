@@ -1,0 +1,158 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/LaptopShop.BLL.csproj": {}
+  },
+  "projects": {
+    "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/LaptopShop.BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/LaptopShop.BLL.csproj",
+        "projectName": "LaptopShop.BLL",
+        "projectPath": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/LaptopShop.BLL.csproj",
+        "packagesPath": "/Users/trongle/.nuget/packages/",
+        "outputPath": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/trongle/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/LaptopShop.DAL.csproj": {
+                "projectPath": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/LaptopShop.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.410/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/LaptopShop.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/LaptopShop.DAL.csproj",
+        "projectName": "LaptopShop.DAL",
+        "projectPath": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/LaptopShop.DAL.csproj",
+        "packagesPath": "/Users/trongle/.nuget/packages/",
+        "outputPath": "/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/trongle/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.*, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.*, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.410/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@model LaptopShop.Web.Models.DTOs.UserDto
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "View User";
+}
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">User Details</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Admin">DashBoard</a></li>
+        <li class="breadcrumb-item"><a href="/Admin/User">Users</a></li>
+        <li class="breadcrumb-item active">View</li>
+    </ol>
+    <div class="container mt-5">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-user me-1"></i>
+                Thông tin người dùng: @Model.FullName
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-3">ID</dt>
+                    <dd class="col-sm-9">@Model.Id</dd>
+
+                    <dt class="col-sm-3">Email</dt>
+                    <dd class="col-sm-9">@Model.Email</dd>
+
+                    <dt class="col-sm-3">Full Name</dt>
+                    <dd class="col-sm-9">@Model.FullName</dd>
+
+                    <dt class="col-sm-3">Phone</dt>
+                    <dd class="col-sm-9">@Model.Phone</dd>
+
+                    <dt class="col-sm-3">Address</dt>
+                    <dd class="col-sm-9">@Model.Address</dd>
+
+                    <dt class="col-sm-3">Role</dt>
+                    <dd class="col-sm-9">
+                        <span class="badge bg-primary">@Model.RoleName</span>
+                    </dd>
+                </dl>
+                <div class="mt-4">
+                    <a href="/Admin/User" class="btn btn-secondary">Quay lại</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

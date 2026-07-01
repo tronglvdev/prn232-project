@@ -1,0 +1,72 @@
+@model List<LaptopShop.Web.Models.DTOs.ProductDto>
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<partial name="_Banner" />
+
+<!-- Fruits Shop Start-->
+<div class="container-fluid fruite py-5">
+    <div class="container py-5">
+    <div class="tab-class text-center">
+        <div class="row g-4">
+        <div class="col-lg-4 text-start">
+            <h1>Sản phẩm nổi bật</h1>
+        </div>
+        <div class="col-lg-8 text-end">
+            <ul class="nav nav-pills d-inline-flex text-center mb-5">
+            <li class="nav-item">
+                <a class="d-flex m-2 py-2 bg-light rounded-pill active" href="/Store">
+                <span class="text-dark" style="width: 130px">All Products</span>
+                </a>
+            </li>
+            </ul>
+        </div>
+        </div>
+        <div class="tab-content">
+        <div id="tab-1" class="tab-pane fade show p-0 active">
+            <div class="row g-4">
+            <div class="col-lg-12">
+                <div class="row g-4">
+                @foreach(var product in Model)
+                {
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="rounded position-relative fruite-item">
+                        <div class="fruite-img">
+                        <!-- Use a fallback image if no image provided -->
+                        <img src="/images/product/@(string.IsNullOrEmpty(product.Image) ? "default.png" : product.Image)" class="img-fluid w-100 rounded-top"
+                            alt="@product.Name" style="height:200px; object-fit:cover;" />
+                        </div>
+                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                        style="top: 10px; left: 10px">
+                        @product.Factory
+                        </div>
+                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                        <h4 style="font-size: 15px;">
+                            <a href="/Store/Detail/@product.Id"> @product.Name </a>
+                        </h4>
+                        <p style="font-size: 13px;">@product.ShortDesc</p>
+                        <div class="d-flex flex-lg-wrap justify-content-center flex-column">
+                            <p style="font-size: 15px; text-align: center; width: 100%;" class="text-dark fw-bold mb-3">
+                            @product.Price.ToString("N0") đ
+                            </p>
+                            <button data-product-id="@product.Id" class="btnAddToCartHomepage mx-auto btn border border-secondary rounded text-primary">
+                            <i class="fa fa-shopping-bag me-2 text-primary"></i>
+                            Add to cart
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                }
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Fruits Shop End-->
+
+<partial name="_Feature" />

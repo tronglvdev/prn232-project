@@ -1,0 +1,127 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LaptopShop.Web
+build_property.RootNamespace = LaptopShop.Web
+build_property.ProjectDir = /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Admin/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Admin/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Admin/ProductCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUHJvZHVjdENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Admin/ProductUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUHJvZHVjdFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Admin/ProductView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUHJvZHVjdFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Admin/User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Admin/UserView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vVXNlclZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Admin/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Cart/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FydC9DaGVja291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Cart/History.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FydC9IaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FydC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Cart/ThankYou.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FydC9UaGFua1lvdS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Shared/_Banner.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19CYW5uZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Shared/_Feature.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19GZWF0dXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Store/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvcmUvRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Store/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3RvcmUvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-k4zqa1gl8s

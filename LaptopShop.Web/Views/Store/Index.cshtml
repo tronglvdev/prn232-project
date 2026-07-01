@@ -1,0 +1,149 @@
+@model List<LaptopShop.Web.Models.DTOs.ProductDto>
+@{
+    ViewData["Title"] = "Sản Phẩm";
+}
+
+<!-- Single Product Start -->
+<div class="container-fluid py-5 mt-5">
+    <div class="container py-5">
+        <div class="row g-4 mb-5">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Danh Sách Sản Phẩm</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row g-4 fruite">
+                <div class="col-12 col-md-4">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <form method="get" action="/Store" id="filterForm">
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Tìm kiếm theo tên / Hãng</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Tên sản phẩm..." value="@Context.Request.Query["name"]">
+                                </div>
+                                <div class="mb-4">
+                                    <div class="mb-2"><b>Hãng sản xuất</b></div>
+                                    @foreach(var f in new[] { "APPLE", "ASUS", "LENOVO", "DELL", "LG", "ACER" })
+                                    {
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="factory" value="@f" id="factory-@f" @(Context.Request.Query["factory"].Contains(f) ? "checked" : "")>
+                                            <label class="form-check-label" for="factory-@f">@f</label>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="mb-4">
+                                    <div class="mb-2"><b>Mục đích sử dụng</b></div>
+                                    @foreach(var t in new[] { "GAMING", "SINHVIEN-VANPHONG", "THIET-KE-DO-HOA", "MONG-NHE", "DOANH-NHAN" })
+                                    {
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="target" value="@t" id="target-@t" @(Context.Request.Query["target"].Contains(t) ? "checked" : "")>
+                                            <label class="form-check-label" for="target-@t">@t</label>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="mb-4">
+                                    <div class="mb-2"><b>Mức giá</b></div>
+                                    @foreach(var p in new[] { "duoi-10-trieu", "10-15-trieu", "15-20-trieu", "tren-20-trieu" })
+                                    {
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="price" value="@p" id="price-@p" @(Context.Request.Query["price"].Contains(p) ? "checked" : "")>
+                                            <label class="form-check-label" for="price-@p">@p.Replace("-", " ")</label>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="mb-4">
+                                    <div class="mb-2"><b>Sắp xếp</b></div>
+                                    @foreach(var s in new[] { "gia-tang-dan", "gia-giam-dan", "gia-nothing" })
+                                    {
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sort" value="@s" id="sort-@s" @(Context.Request.Query["sort"] == s || (string.IsNullOrEmpty(Context.Request.Query["sort"]) && s == "gia-nothing") ? "checked" : "")>
+                                            <label class="form-check-label" for="sort-@s">@(s == "gia-nothing" ? "Không sắp xếp" : (s == "gia-tang-dan" ? "Giá tăng dần" : "Giá giảm dần"))</label>
+                                        </div>
+                                    }
+                                </div>
+                                <a href="/Store" class="btn btn-outline-secondary w-100 mt-2">Xóa Lọc</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 text-center">
+                    <div class="row g-4" id="productList">
+                        @if(Model.Count == 0)
+                        {
+                            <div>Không tìm thấy sản phẩm</div>
+                        }
+                        @foreach(var product in Model)
+                        {
+                            <div class="col-md-6 col-lg-4">
+                                <div class="rounded position-relative fruite-item">
+                                    <div class="fruite-img">
+                                        <img src="/images/product/@(string.IsNullOrEmpty(product.Image) ? "default.png" : product.Image)"
+                                            class="img-fluid w-100 rounded-top" alt="@product.Name" style="height:200px; object-fit:cover;">
+                                    </div>
+                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                        style="top: 10px; left: 10px;">@product.Factory
+                                    </div>
+                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                        <h4 style="font-size: 15px;">
+                                            <a href="/Store/Detail/@product.Id">
+                                                @product.Name
+                                            </a>
+                                        </h4>
+                                        <p style="font-size: 13px;">@product.ShortDesc</p>
+                                        <div class="d-flex flex-lg-wrap justify-content-center flex-column">
+                                            <p style="font-size: 15px; text-align: center; width: 100%;" class="text-dark fw-bold mb-3">
+                                                @product.Price.ToString("N0") đ
+                                            </p>
+                                            <button data-product-id="@product.Id" class="btnAddToCartDetail mx-auto btn border border-secondary rounded-pill px-3 text-primary">
+                                                <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Single Product End -->
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            const form = $('#filterForm');
+            
+            form.on('change', 'input, select', function () {
+                var url = form.attr('action') + '?' + form.serialize();
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function (data) {
+                        var newProductList = $(data).find('#productList').html();
+                        $('#productList').html(newProductList);
+                        window.history.pushState({}, '', url);
+                    }
+                });
+            });
+
+            let timeout = null;
+            form.find('input[name="name"]').on('keyup', function () {
+                clearTimeout(timeout);
+                timeout = setTimeout(function () {
+                    form.find('input[name="name"]').trigger('change');
+                }, 500);
+            });
+            
+            form.on('submit', function (e) {
+                e.preventDefault();
+                form.find('input[name="name"]').trigger('change');
+            });
+        });
+    </script>
+}

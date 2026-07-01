@@ -1,0 +1,47 @@
+@model LaptopShop.Web.ViewModels.RegisterViewModel
+@{
+    ViewData["Title"] = "Đăng ký";
+}
+
+<div class="container-fluid py-5 mt-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="bg-light rounded p-5">
+                    <h2 class="text-center mb-4">Đăng ký</h2>
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger">@ViewBag.Error</div>
+                    }
+                    <form action="/Account/Register" method="post">
+                        <div class="mb-3">
+                            <label asp-for="FullName" class="form-label">Họ và tên</label>
+                            <input asp-for="FullName" class="form-control" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Email</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label">Mật khẩu</label>
+                            <input type="password" asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="ConfirmPassword" class="form-label">Nhập lại mật khẩu</label>
+                            <input type="password" asp-for="ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2">Đăng ký</button>
+                        <div class="mt-3 text-center">
+                            <span>Đã có tài khoản? </span>
+                            <a href="/Account/Login">Đăng nhập</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

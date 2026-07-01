@@ -1,0 +1,60 @@
+@model LaptopShop.Web.Models.DTOs.ProductDto
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "View Product";
+}
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Product Details</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Admin">DashBoard</a></li>
+        <li class="breadcrumb-item"><a href="/Admin/Product">Products</a></li>
+        <li class="breadcrumb-item active">View</li>
+    </ol>
+    <div class="container mt-5">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-box me-1"></i>
+                Thông tin sản phẩm: @Model.Name
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-3">ID</dt>
+                    <dd class="col-sm-9">@Model.Id</dd>
+
+                    <dt class="col-sm-3">Name</dt>
+                    <dd class="col-sm-9">@Model.Name</dd>
+
+                    <dt class="col-sm-3">Price</dt>
+                    <dd class="col-sm-9"><span class="text-danger fw-bold">@Model.Price.ToString("N0") đ</span></dd>
+
+                    <dt class="col-sm-3">Factory</dt>
+                    <dd class="col-sm-9">@Model.Factory</dd>
+
+                    <dt class="col-sm-3">Target</dt>
+                    <dd class="col-sm-9">@Model.Target</dd>
+
+                    <dt class="col-sm-3">Quantity In Stock</dt>
+                    <dd class="col-sm-9">@Model.Quantity</dd>
+
+                    <dt class="col-sm-3">Sold</dt>
+                    <dd class="col-sm-9">@Model.Sold</dd>
+                    
+                    <dt class="col-sm-3">Short Desc</dt>
+                    <dd class="col-sm-9">@Model.ShortDesc</dd>
+
+                    <dt class="col-sm-3">Detail Desc</dt>
+                    <dd class="col-sm-9">@Model.DetailDesc</dd>
+
+                    <dt class="col-sm-3">Image</dt>
+                    <dd class="col-sm-9">
+                        <img src="/images/product/@Model.Image" alt="@Model.Name" class="img-fluid" style="max-width: 200px;" />
+                    </dd>
+                </dl>
+                <div class="mt-4">
+                    <a href="/Admin/Product" class="btn btn-secondary">Quay lại</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

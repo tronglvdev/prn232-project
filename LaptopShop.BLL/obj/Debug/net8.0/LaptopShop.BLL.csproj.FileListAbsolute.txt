@@ -1,0 +1,15 @@
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/bin/Debug/net8.0/LaptopShop.BLL.deps.json
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/bin/Debug/net8.0/LaptopShop.BLL.dll
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/bin/Debug/net8.0/LaptopShop.BLL.pdb
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/bin/Debug/net8.0/LaptopShop.DAL.dll
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/bin/Debug/net8.0/LaptopShop.DAL.pdb
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/LaptopShop.BLL.csproj.AssemblyReference.cache
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/LaptopShop.BLL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/LaptopShop.BLL.AssemblyInfoInputs.cache
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/LaptopShop.BLL.AssemblyInfo.cs
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/LaptopShop.BLL.csproj.CoreCompileInputs.cache
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/LaptopSh.E953D2B3.Up2Date
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/LaptopShop.BLL.dll
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/refint/LaptopShop.BLL.dll
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/LaptopShop.BLL.pdb
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/ref/LaptopShop.BLL.dll

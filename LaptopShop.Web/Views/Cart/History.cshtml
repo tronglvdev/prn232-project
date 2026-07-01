@@ -1,0 +1,80 @@
+@model IEnumerable<LaptopShop.Web.Models.DTOs.OrderDto>
+
+@{
+    ViewData["Title"] = "Lịch sử mua hàng";
+}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="mb-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Lịch sử mua hàng</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="table-responsive">
+            <table class="table border">
+                <thead>
+                    <tr>
+                        <th scope="col">Sản phẩm</th>
+                        <th scope="col">Tên</th>
+                        <th scope="col">Giá cả</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Thành tiền</th>
+                        <th scope="col">Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="6" class="text-center">Không có đơn hàng nào được tạo</td>
+                        </tr>
+                    }
+
+                    @foreach (var order in Model)
+                    {
+                        <tr class="table-light">
+                            <td colspan="2"><strong>Order Id = @order.Id</strong></td>
+                            <td>
+                                <strong>
+                                    @string.Format("{0:N0}", order.TotalPrice) đ
+                                </strong>
+                            </td>
+                            <td colspan="2"></td>
+                            <td><span class="badge bg-info text-dark">@order.Status</span></td>
+                        </tr>
+
+                        @foreach (var orderDetail in order.OrderDetails)
+                        {
+                            <tr>
+                                <th scope="row">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/images/product/@(orderDetail.ProductImage ?? "default.jpg")"
+                                            class="img-fluid rounded-circle"
+                                            style="width: 70px; height: 70px" alt="" />
+                                    </div>
+                                </th>
+                                <td class="align-middle">
+                                    <a href="/Store/Detail/@orderDetail.ProductId" target="_blank">
+                                        @orderDetail.ProductName
+                                    </a>
+                                </td>
+                                <td class="align-middle">
+                                    @string.Format("{0:N0}", orderDetail.Price) đ
+                                </td>
+                                <td class="align-middle">@orderDetail.Quantity</td>
+                                <td class="align-middle">
+                                    @string.Format("{0:N0}", orderDetail.Price * orderDetail.Quantity) đ
+                                </td>
+                                <td></td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
