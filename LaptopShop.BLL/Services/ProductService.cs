@@ -19,7 +19,7 @@ public class ProductService : IProductService
 
         if (!string.IsNullOrEmpty(searchTerm))
         {
-            products = products.Where(p => p.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) || 
+            products = products.Where(p => p.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
                                            (p.Factory != null && p.Factory.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)));
         }
         if (factory != null && factory.Length > 0)
@@ -32,7 +32,7 @@ public class ProductService : IProductService
         }
         if (price != null && price.Length > 0)
         {
-            products = products.Where(p => 
+            products = products.Where(p =>
                 (price.Contains("duoi-10-trieu") && p.Price < 10000000) ||
                 (price.Contains("10-15-trieu") && p.Price >= 10000000 && p.Price < 15000000) ||
                 (price.Contains("15-20-trieu") && p.Price >= 15000000 && p.Price <= 20000000) ||

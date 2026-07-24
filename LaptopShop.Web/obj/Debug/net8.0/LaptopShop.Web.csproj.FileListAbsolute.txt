@@ -28,3 +28,4 @@
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/obj/Debug/net8.0/LaptopShop.Web.pdb
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/obj/Debug/net8.0/LaptopShop.Web.genruntimeconfig.cache
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/obj/Debug/net8.0/ref/LaptopShop.Web.dll
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.Web/obj/Debug/net8.0/LaptopShop.Web.sourcelink.json

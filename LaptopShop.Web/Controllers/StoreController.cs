@@ -16,25 +16,47 @@ public class StoreController : Controller
     public async Task<IActionResult> Index([FromQuery] string? name, [FromQuery] string[]? factory, [FromQuery] string[]? target, [FromQuery] string[]? price, [FromQuery] string? sort)
     {
         var client = _httpClientFactory.CreateClient("ApiClient");
-        var query = new List<string>();
-        
-        if (!string.IsNullOrEmpty(name)) query.Add($"name={name}");
+        var filters = new List<string>();
+
+        if (!string.IsNullOrEmpty(name))
+            filters.Add($"contains(tolower(Name), '{name.ToLower()}')");
+
         if (factory != null && factory.Length > 0)
         {
-            foreach(var f in factory) query.Add($"factory={f}");
+            var fFilters = factory.Select(f => $"Factory eq '{f}'");
+            filters.Add($"({string.Join(" or ", fFilters)})");
         }
+
         if (target != null && target.Length > 0)
         {
-            foreach(var t in target) query.Add($"target={t}");
+            var tFilters = target.Select(t => $"Target eq '{t}'");
+            filters.Add($"({string.Join(" or ", tFilters)})");
         }
+
         if (price != null && price.Length > 0)
         {
-            foreach(var p in price) query.Add($"price={p}");
+            var pFilters = new List<string>();
+            foreach (var p in price)
+            {
+                if (p == "duoi-10-trieu") pFilters.Add("Price lt 10000000");
+                else if (p == "10-15-trieu") pFilters.Add("(Price ge 10000000 and Price le 15000000)");
+                else if (p == "15-20-trieu") pFilters.Add("(Price ge 15000000 and Price le 20000000)");
+                else if (p == "tren-20-trieu") pFilters.Add("Price gt 20000000");
+            }
+            if (pFilters.Any()) filters.Add($"({string.Join(" or ", pFilters)})");
         }
-        if (!string.IsNullOrEmpty(sort)) query.Add($"sort={sort}");
 
-        var url = "Products" + (query.Count > 0 ? "?" + string.Join("&", query) : "");
-        
+        var odataQuery = new List<string>();
+        if (filters.Any()) odataQuery.Add($"$filter={string.Join(" and ", filters)}");
+
+        if (!string.IsNullOrEmpty(sort))
+        {
+            if (sort == "gia-tang-dan") odataQuery.Add("$orderby=Price asc");
+            if (sort == "gia-giam-dan") odataQuery.Add("$orderby=Price desc");
+        }
+
+        var url = "Products" + (odataQuery.Count > 0 ? "?" + string.Join("&", odataQuery) : "");
+
         var response = await client.GetAsync(url);
         if (response.IsSuccessStatusCode)
         {

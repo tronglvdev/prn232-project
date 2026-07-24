@@ -45,32 +45,41 @@ public class CartController : Controller
     public async Task<IActionResult> AddToCart(long id, int quantity = 1)
     {
         var cart = GetCart();
-        var item = cart.FirstOrDefault(c => c.ProductId == id);
-        
-        if (item != null)
+        var client = _httpClientFactory.CreateClient("ApiClient");
+        var response = await client.GetAsync($"Products/{id}");
+
+        if (response.IsSuccessStatusCode)
         {
-            item.Quantity += quantity;
-        }
-        else
-        {
-            var client = _httpClientFactory.CreateClient("ApiClient");
-            var response = await client.GetAsync($"Products/{id}");
-            if (response.IsSuccessStatusCode)
+            var content = await response.Content.ReadAsStringAsync();
+            var product = JsonSerializer.Deserialize<ProductDto>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            var item = cart.FirstOrDefault(c => c.ProductId == id);
+            int currentQty = item != null ? item.Quantity : 0;
+
+            if (currentQty + quantity > product.Quantity)
             {
-                var content = await response.Content.ReadAsStringAsync();
-                var product = JsonSerializer.Deserialize<ProductDto>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                cart.Add(new CartItem 
-                { 
-                    ProductId = product.Id, 
-                    ProductName = product.Name, 
-                    Price = product.Price, 
-                    Image = product.Image, 
-                    Quantity = quantity 
+                TempData["Error"] = $"Không đủ số lượng trong kho. (Còn lại: {product.Quantity})";
+                return RedirectToAction("Index");
+            }
+
+            if (item != null)
+            {
+                item.Quantity += quantity;
+            }
+            else
+            {
+                cart.Add(new CartItem
+                {
+                    ProductId = product.Id,
+                    ProductName = product.Name,
+                    Price = product.Price,
+                    Image = product.Image,
+                    Quantity = quantity
                 });
             }
+            SaveCart(cart);
         }
-        
-        SaveCart(cart);
+
         return RedirectToAction("Index");
     }
 
@@ -78,31 +87,39 @@ public class CartController : Controller
     public async Task<IActionResult> AddToCartAjax([FromBody] AddToCartRequest request)
     {
         var cart = GetCart();
-        var item = cart.FirstOrDefault(c => c.ProductId == request.ProductId);
-        
-        if (item != null)
+        var client = _httpClientFactory.CreateClient("ApiClient");
+        var response = await client.GetAsync($"Products/{request.ProductId}");
+
+        if (response.IsSuccessStatusCode)
         {
-            item.Quantity += request.Quantity;
-        }
-        else
-        {
-            var client = _httpClientFactory.CreateClient("ApiClient");
-            var response = await client.GetAsync($"Products/{request.ProductId}");
-            if (response.IsSuccessStatusCode)
+            var content = await response.Content.ReadAsStringAsync();
+            var product = JsonSerializer.Deserialize<ProductDto>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            var item = cart.FirstOrDefault(c => c.ProductId == request.ProductId);
+            int currentQty = item != null ? item.Quantity : 0;
+
+            if (currentQty + request.Quantity > product.Quantity)
             {
-                var content = await response.Content.ReadAsStringAsync();
-                var product = JsonSerializer.Deserialize<ProductDto>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                cart.Add(new CartItem 
-                { 
-                    ProductId = product.Id, 
-                    ProductName = product.Name, 
-                    Price = product.Price, 
-                    Image = product.Image, 
-                    Quantity = request.Quantity 
+                return BadRequest(new { message = $"Sản phẩm chỉ còn {product.Quantity} chiếc trong kho." });
+            }
+
+            if (item != null)
+            {
+                item.Quantity += request.Quantity;
+            }
+            else
+            {
+                cart.Add(new CartItem
+                {
+                    ProductId = product.Id,
+                    ProductName = product.Name,
+                    Price = product.Price,
+                    Image = product.Image,
+                    Quantity = request.Quantity
                 });
             }
         }
-        
+
         SaveCart(cart);
         int sum = cart.Sum(c => c.Quantity);
         return Ok(sum);
@@ -149,8 +166,23 @@ public class CartController : Controller
 
         var client = _httpClientFactory.CreateClient("ApiClient");
 
-        long userId = 1; // Default
-        string userName = "Khách vãng lai";
+        foreach (var item in cart)
+        {
+            var responseProduct = await client.GetAsync($"Products/{item.ProductId}");
+            if (responseProduct.IsSuccessStatusCode)
+            {
+                var content = await responseProduct.Content.ReadAsStringAsync();
+                var product = JsonSerializer.Deserialize<ProductDto>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                if (item.Quantity > product.Quantity)
+                {
+                    TempData["Error"] = $"Sản phẩm '{item.ProductName}' chỉ còn {product.Quantity} chiếc trong kho. Vui lòng cập nhật lại giỏ hàng.";
+                    return RedirectToAction("Index");
+                }
+            }
+        }
+
+        long userId = 1;
+        string userName = "Khách";
         var userIdClaim = User.FindFirst("Id");
         if (userIdClaim != null && long.TryParse(userIdClaim.Value, out long parsedId))
         {
@@ -182,7 +214,7 @@ public class CartController : Controller
             SaveCart(new List<CartItem>());
             return RedirectToAction("ThankYou");
         }
-        
+
         return View("Checkout", cart);
     }
 
@@ -206,5 +238,29 @@ public class CartController : Controller
             }
         }
         return View(new List<OrderDto>());
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CancelOrder(long id)
+    {
+        var client = _httpClientFactory.CreateClient("ApiClient");
+        var response = await client.PutAsJsonAsync($"Orders/{id}/status", "Cancelled");
+        if (response.IsSuccessStatusCode)
+        {
+            TempData["Message"] = "Huỷ đơn hàng thành công!";
+        }
+        return RedirectToAction("History");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> RequestReturn(long id)
+    {
+        var client = _httpClientFactory.CreateClient("ApiClient");
+        var response = await client.PostAsync($"Orders/{id}/request-return", null);
+        if (response.IsSuccessStatusCode)
+        {
+            TempData["Message"] = "Đã gửi yêu cầu trả hàng, vui lòng chờ Admin duyệt!";
+        }
+        return RedirectToAction("History");
     }
 }

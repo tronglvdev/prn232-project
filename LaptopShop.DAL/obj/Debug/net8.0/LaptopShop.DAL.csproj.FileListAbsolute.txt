@@ -12,3 +12,4 @@
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/LaptopShop.DAL.pdb
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/LaptopShop.DAL.genruntimeconfig.cache
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/ref/LaptopShop.DAL.dll
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.DAL/obj/Debug/net8.0/LaptopShop.DAL.sourcelink.json

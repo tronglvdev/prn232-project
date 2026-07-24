@@ -1,6 +1,7 @@
 using LaptopShop.BLL.DTOs;
 using LaptopShop.BLL.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace LaptopShop.API.Controllers;
 
@@ -16,9 +17,11 @@ public class ProductsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get([FromQuery] string? name, [FromQuery] string[]? factory, [FromQuery] string[]? target, [FromQuery] string[]? price, [FromQuery] string? sort)
+    [EnableQuery]
+    public async Task<IActionResult> Get()
     {
-        var products = await _productService.GetAllProductsAsync(name, factory, target, price, sort);
+        // Trả về toàn bộ dữ liệu, OData ([EnableQuery]) sẽ tự động parse URL (chứa $filter, $orderby) và lọc dữ liệu giúp ta
+        var products = await _productService.GetAllProductsAsync(null, null, null, null, null);
         return Ok(products);
     }
 

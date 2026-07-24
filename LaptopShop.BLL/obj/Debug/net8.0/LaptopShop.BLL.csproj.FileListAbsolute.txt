@@ -13,3 +13,4 @@
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/refint/LaptopShop.BLL.dll
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/LaptopShop.BLL.pdb
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/ref/LaptopShop.BLL.dll
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.BLL/obj/Debug/net8.0/LaptopShop.BLL.sourcelink.json

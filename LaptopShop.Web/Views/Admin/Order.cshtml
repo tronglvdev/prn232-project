@@ -11,6 +11,13 @@
         <li class="breadcrumb-item active">Orders</li>
     </ol>
     <div class="container mt-5">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                @TempData["Message"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
         <div class="row">
             <div class="col-12 mx-auto">
                 <div class="d-flex justify-content-between">
@@ -32,6 +39,7 @@
                                     <th>SĐT</th>
                                     <th>Địa chỉ</th>
                                     <th>Trạng thái</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -46,16 +54,110 @@
                                         <td>
                                             @if (order.Status == "Pending")
                                             {
-                                                <span class="badge bg-warning text-dark">@order.Status</span>
+                                                <span class="badge bg-warning text-dark">Chờ xác nhận</span>
                                             }
-                                            else if (order.Status == "Completed")
+                                            else if (order.Status == "Shipping")
                                             {
-                                                <span class="badge bg-success">@order.Status</span>
+                                                <span class="badge bg-info text-dark">Đang giao</span>
+                                            }
+                                            else if (order.Status == "Delivered")
+                                            {
+                                                <span class="badge bg-success">Đã giao</span>
+                                            }
+                                            else if (order.Status == "Cancelled")
+                                            {
+                                                <span class="badge bg-danger">Đã huỷ</span>
+                                            }
+                                            else if (order.Status == "ReturnRequested")
+                                            {
+                                                <span class="badge bg-warning text-dark">Yêu cầu trả hàng</span>
+                                            }
+                                            else if (order.Status == "Returned")
+                                            {
+                                                <span class="badge bg-secondary">Đã hoàn trả</span>
                                             }
                                             else
                                             {
                                                 <span class="badge bg-secondary">@order.Status</span>
                                             }
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal-@order.Id">Chi tiết</button>
+                                            @if (order.Status == "Pending")
+                                            {
+                                                <form method="post" action="/Admin/Order/UpdateStatus/@order.Id" class="d-inline">
+                                                    <input type="hidden" name="status" value="Shipping" />
+                                                    <button type="submit" class="btn btn-sm btn-info">Giao hàng</button>
+                                                </form>
+                                                <form method="post" action="/Admin/Order/UpdateStatus/@order.Id" class="d-inline">
+                                                    <input type="hidden" name="status" value="Cancelled" />
+                                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Bạn muốn huỷ đơn hàng này?');">Huỷ</button>
+                                                </form>
+                                            }
+                                            else if (order.Status == "Shipping")
+                                            {
+                                                <form method="post" action="/Admin/Order/UpdateStatus/@order.Id" class="d-inline">
+                                                    <input type="hidden" name="status" value="Delivered" />
+                                                    <button type="submit" class="btn btn-sm btn-success">Đã giao xong</button>
+                                                </form>
+                                            }
+                                            else if (order.Status == "ReturnRequested")
+                                            {
+                                                <form method="post" action="/Admin/Order/UpdateStatus/@order.Id" class="d-inline">
+                                                    <input type="hidden" name="status" value="ReturnApproved" />
+                                                    <button type="submit" class="btn btn-sm btn-warning">Chấp nhận trả</button>
+                                                </form>
+                                            }
+
+                                            <!-- Order Detail Modal -->
+                                            <div class="modal fade text-start" id="orderModal-@order.Id" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Chi tiết đơn hàng #@order.Id</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p><strong>Người nhận:</strong> @order.ReceiverName</p>
+                                                            <p><strong>SĐT:</strong> @order.ReceiverPhone</p>
+                                                            <p><strong>Địa chỉ:</strong> @order.ReceiverAddress</p>
+                                                            <p><strong>Tổng tiền:</strong> @order.TotalPrice.ToString("N0") đ</p>
+                                                            <hr>
+                                                            <h6>Sản phẩm đã đặt:</h6>
+                                                            <table class="table table-bordered">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Ảnh</th>
+                                                                        <th>Tên sản phẩm</th>
+                                                                        <th>Đơn giá</th>
+                                                                        <th>Số lượng</th>
+                                                                        <th>Thành tiền</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @if(order.OrderDetails != null)
+                                                                    {
+                                                                        foreach(var item in order.OrderDetails)
+                                                                        {
+                                                                            <tr>
+                                                                                <td><img src="/images/product/@(string.IsNullOrEmpty(item.ProductImage) ? "default.png" : item.ProductImage)" width="50" height="50" style="object-fit:cover" /></td>
+                                                                                <td>@item.ProductName</td>
+                                                                                <td>@item.Price.ToString("N0") đ</td>
+                                                                                <td>@item.Quantity</td>
+                                                                                <td>@((item.Price * item.Quantity).ToString("N0")) đ</td>
+                                                                            </tr>
+                                                                        }
+                                                                    }
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </td>
                                     </tr>
                                 }

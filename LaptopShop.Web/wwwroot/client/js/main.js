@@ -303,8 +303,12 @@
           });
         },
         error: function (response) {
-          alert("Có lỗi xảy ra");
-          console.log("error: ", response);
+          if (response.status === 400 && response.responseJSON && response.responseJSON.message) {
+            alert(response.responseJSON.message);
+          } else {
+            alert("Có lỗi xảy ra");
+            console.log("error: ", response);
+          }
         },
       });
     }

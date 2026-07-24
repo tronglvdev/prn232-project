@@ -75,7 +75,7 @@ public class AccountController : Controller
                 FullName = model.FullName,
                 Email = model.Email,
                 Password = model.Password,
-                RoleId = 2, // 2 = USER
+                RoleId = 2,
                 Avatar = "default.jpg",
                 Phone = "",
                 Address = ""

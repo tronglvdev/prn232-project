@@ -112,6 +112,7 @@ public class OrderService : IOrderService
         };
 
         await _orderRepository.InsertAsync(order);
+
         await _orderRepository.SaveAsync();
 
         orderDto.Id = order.Id;
@@ -120,9 +121,40 @@ public class OrderService : IOrderService
 
     public async Task UpdateOrderStatusAsync(long id, string status)
     {
-        var order = await _orderRepository.GetByIdAsync(id);
+        var orders = await _orderRepository.GetAllAsync(o => o.Id == id, includeProperties: "OrderDetails");
+        var order = orders.FirstOrDefault();
         if (order != null)
         {
+            if (status == "Shipping" && order.Status == "Pending")
+            {
+                foreach (var detail in order.OrderDetails)
+                {
+                    var product = await _productRepository.GetByIdAsync(detail.ProductId);
+                    if (product != null)
+                    {
+                        product.Quantity -= detail.Quantity;
+                        if (product.Quantity < 0) product.Quantity = 0;
+                        product.Sold += detail.Quantity;
+                        _productRepository.Update(product);
+                    }
+                }
+            }
+
+            if (status == "Cancelled" && (order.Status == "Shipping" || order.Status == "Delivered" || order.Status == "ReturnRequested"))
+            {
+                foreach (var detail in order.OrderDetails)
+                {
+                    var product = await _productRepository.GetByIdAsync(detail.ProductId);
+                    if (product != null)
+                    {
+                        product.Quantity += detail.Quantity;
+                        product.Sold -= detail.Quantity;
+                        if (product.Sold < 0) product.Sold = 0;
+                        _productRepository.Update(product);
+                    }
+                }
+            }
+
             order.Status = status;
             _orderRepository.Update(order);
             await _orderRepository.SaveAsync();
@@ -138,10 +170,9 @@ public class OrderService : IOrderService
     {
         var orders = await _orderRepository.GetAllAsync(o => o.Id == orderId, includeProperties: "OrderDetails");
         var order = orders.FirstOrDefault();
-        
+
         if (order != null && order.Status == "ReturnRequested")
         {
-            // Logic: Khôi phục số lượng sản phẩm
             foreach (var detail in order.OrderDetails)
             {
                 var product = await _productRepository.GetByIdAsync(detail.ProductId);
@@ -156,10 +187,8 @@ public class OrderService : IOrderService
 
             order.Status = "Returned";
             _orderRepository.Update(order);
-            
-            // Save both product updates and order update
-            await _orderRepository.SaveAsync(); 
-            // Save on _productRepository is handled by same DB context context.SaveChangesAsync();
+
+            await _orderRepository.SaveAsync();
         }
     }
 }

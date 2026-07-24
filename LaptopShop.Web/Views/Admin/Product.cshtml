@@ -22,7 +22,7 @@
             <div class="col-12 mx-auto">
                 <div class="d-flex justify-content-between">
                     <h1>Table Product</h1>
-                    <a href="/Admin/Product/Create" class="btn btn-primary">Create product</a>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">Create product</button>
                 </div>
                 <hr />
                 <div class="card mb-4">
@@ -37,6 +37,7 @@
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Price</th>
+                                    @* <th>Kho / Đã bán</th> *@
                                     <th>Factory</th>
                                     <th>Action</th>
                                 </tr>
@@ -48,11 +49,82 @@
                                         <td>@product.Id</td>
                                         <td>@product.Name</td>
                                         <td>@product.Price.ToString("N0") đ</td>
+                                        @* <td>
+                                            <span class="text-success">Còn: @product.Quantity</span><br/>
+                                            <span class="text-secondary">Đã bán: @product.Sold</span>
+                                        </td> *@
                                         <td>@product.Factory</td>
                                         <td>
                                             <a href="/Admin/Product/View/@product.Id" class="btn btn-success">View</a>
-                                            <a href="/Admin/Product/Update/@product.Id" class="btn btn-warning mx-2">Update</a>
-                                            <a href="/Admin/Product/Delete/@product.Id" class="btn btn-danger">Delete</a>
+                                            <button type="button" class="btn btn-warning mx-2" data-bs-toggle="modal" data-bs-target="#updateModal-@product.Id">Update</button>
+                                            <a href="/Admin/Product/Delete/@product.Id" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');">Delete</a>
+
+                                            <div class="modal fade text-start" id="updateModal-@product.Id" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Update Product - @product.Name</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <form method="post" action="/Admin/Product/Update/@product.Id" enctype="multipart/form-data">
+                                                            <div class="modal-body">
+                                                                <input type="hidden" name="Image" value="@product.Image" id="orgImage-@product.Id" />
+                                                                <div class="row">
+                                                                    <div class="mb-3 col-12 col-md-6">
+                                                                        <label class="form-label">Name:</label>
+                                                                        <input type="text" class="form-control" name="Name" value="@product.Name" required />
+                                                                    </div>
+                                                                    <div class="mb-3 col-12 col-md-6">
+                                                                        <label class="form-label">Price:</label>
+                                                                        <input type="number" class="form-control" name="Price" value="@product.Price" required />
+                                                                    </div>
+                                                                    <div class="mb-3 col-12 col-md-6">
+                                                                        <label class="form-label">Detail description:</label>
+                                                                        <input type="text" class="form-control" name="DetailDesc" value="@product.DetailDesc" required />
+                                                                    </div>
+                                                                    <div class="mb-3 col-12 col-md-6">
+                                                                        <label class="form-label">Short description:</label>
+                                                                        <input type="text" class="form-control" name="ShortDesc" value="@product.ShortDesc" required />
+                                                                    </div>
+                                                                    <div class="mb-3 col-12">
+                                                                        <label class="form-label">Quantity:</label>
+                                                                        <input type="number" class="form-control" name="Quantity" value="@product.Quantity" required />
+                                                                    </div>
+                                                                    <div class="mb-3 col-12 col-md-6">
+                                                                        <label class="form-label">Factory:</label>
+                                                                        <select class="form-select" name="Factory">
+                                                                            @foreach (var f in new[] { "APPLE", "ASUS", "LENOVO", "DELL", "LG", "ACER" })
+                                                                            {
+                                                                                <option value="@f" selected="@(product.Factory == f)">@f</option>
+                                                                            }
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="mb-3 col-12 col-md-6">
+                                                                        <label class="form-label">Target:</label>
+                                                                        <select class="form-select" name="Target">
+                                                                            @foreach (var t in new[] { "GAMING", "SINHVIEN-VANPHONG", "THIET-KE-DO-HOA", "MONG-NHE", "DOANH-NHAN" })
+                                                                            {
+                                                                                <option value="@t" selected="@(product.Target == t)">@t</option>
+                                                                            }
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="mb-3 col-12 col-md-6">
+                                                                        <label class="form-label">Image:</label>
+                                                                        <input class="form-control avatarFile" type="file" accept=".png, .jpg, .jpeg" name="hoidanitFile" data-id="@product.Id" />
+                                                                    </div>
+                                                                    <div class="col-12 mb-3">
+                                                                        <img style="max-height: 250px; display: @(string.IsNullOrEmpty(product.Image) ? "none" : "block");" src="@(string.IsNullOrEmpty(product.Image) ? "" : "/images/product/" + product.Image)" id="avatarPreview-@product.Id">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-warning">Update</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 }
@@ -89,3 +161,95 @@
         </div>
     </div>
 </div>
+
+<!-- Create Modal -->
+<div class="modal fade" id="createModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="/Admin/Product/Create" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="mb-3 col-12 col-md-6">
+                            <label class="form-label">Name:</label>
+                            <input type="text" class="form-control" name="Name" required />
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label class="form-label">Price:</label>
+                            <input type="number" class="form-control" name="Price" required />
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label class="form-label">Detail description:</label>
+                            <input type="text" class="form-control" name="DetailDesc" required />
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label class="form-label">Short description:</label>
+                            <input type="text" class="form-control" name="ShortDesc" required />
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label class="form-label">Quantity:</label>
+                            <input type="number" class="form-control" name="Quantity" required />
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label class="form-label">Factory:</label>
+                            <select class="form-select" name="Factory">
+                                <option value="APPLE">Apple (MacBook)</option>
+                                <option value="ASUS">Asus</option>
+                                <option value="LENOVO">Lenovo</option>
+                                <option value="DELL">Dell</option>
+                                <option value="LG">LG</option>
+                                <option value="ACER">Acer</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label class="form-label">Target:</label>
+                            <select class="form-select" name="Target">
+                                <option value="GAMING">Gaming</option>
+                                <option value="SINHVIEN-VANPHONG">Sinh viên - Văn phòng</option>
+                                <option value="THIET-KE-DO-HOA">Thiết kế đồ hoạ</option>
+                                <option value="MONG-NHE">Mỏng nhẹ</option>
+                                <option value="DOANH-NHAN">Doanh nhân</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label class="form-label">Image:</label>
+                            <input class="form-control avatarFile" type="file" accept=".png, .jpg, .jpeg" name="hoidanitFile" data-id="create" required />
+                        </div>
+                        <div class="col-12 mb-3">
+                            <img style="max-height: 250px; display: none;" id="avatarPreview-create">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(() => {
+            $(".avatarFile").change(function (e) {
+                const id = $(this).attr("data-id");
+                const previewId = "#avatarPreview-" + id;
+                const orgImage = $("#orgImage-" + id).val();
+
+                if (e.target.files && e.target.files[0]) {
+                    const imgURL = URL.createObjectURL(e.target.files[0]);
+                    $(previewId).attr("src", imgURL);
+                    $(previewId).css({ "display": "block" });
+                } else if (orgImage) {
+                    $(previewId).attr("src", "/images/product/" + orgImage);
+                } else {
+                    $(previewId).css({ "display": "none" });
+                }
+            });
+        });
+    </script>
+}

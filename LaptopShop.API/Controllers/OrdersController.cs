@@ -1,6 +1,7 @@
 using LaptopShop.BLL.DTOs;
 using LaptopShop.BLL.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace LaptopShop.API.Controllers;
 
@@ -16,6 +17,7 @@ public class OrdersController : ControllerBase
     }
 
     [HttpGet]
+    [EnableQuery]
     public async Task<IActionResult> Get()
     {
         var orders = await _orderService.GetAllOrdersAsync();

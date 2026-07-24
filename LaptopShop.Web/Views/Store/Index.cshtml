@@ -3,7 +3,6 @@
     ViewData["Title"] = "Sản Phẩm";
 }
 
-<!-- Single Product Start -->
 <div class="container-fluid py-5 mt-5">
     <div class="container py-5">
         <div class="row g-4 mb-5">
@@ -57,15 +56,15 @@
                                 </div>
                                 <div class="mb-4">
                                     <div class="mb-2"><b>Sắp xếp</b></div>
-                                    @foreach(var s in new[] { "gia-tang-dan", "gia-giam-dan", "gia-nothing" })
+                                    @foreach(var s in new[] { "gia-tang-dan", "gia-giam-dan", "khong-sap-xep" })
                                     {
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="sort" value="@s" id="sort-@s" @(Context.Request.Query["sort"] == s || (string.IsNullOrEmpty(Context.Request.Query["sort"]) && s == "gia-nothing") ? "checked" : "")>
-                                            <label class="form-check-label" for="sort-@s">@(s == "gia-nothing" ? "Không sắp xếp" : (s == "gia-tang-dan" ? "Giá tăng dần" : "Giá giảm dần"))</label>
+                                            <input class="form-check-input" type="radio" name="sort" value="@s" id="sort-@s" @(Context.Request.Query["sort"] == s || (string.IsNullOrEmpty(Context.Request.Query["sort"]) && s == "khong-sap-xep") ? "checked" : "")>
+                                            <label class="form-check-label" for="sort-@s">@(s == "khong-sap-xep" ? "Không sắp xếp" : (s == "gia-tang-dan" ? "Giá tăng dần" : "Giá giảm dần"))</label>
                                         </div>
                                     }
                                 </div>
-                                <a href="/Store" class="btn btn-outline-secondary w-100 mt-2">Xóa Lọc</a>
+                                <a href="/Store" class="btn btn-outline-secondary w-100 mt-2">Xóa</a>
                             </form>
                         </div>
                     </div>
@@ -84,9 +83,18 @@
                                         <img src="/images/product/@(string.IsNullOrEmpty(product.Image) ? "default.png" : product.Image)"
                                             class="img-fluid w-100 rounded-top" alt="@product.Name" style="height:200px; object-fit:cover;">
                                     </div>
-                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; left: 10px;">@product.Factory
-                                    </div>
+                                    @if (product.Quantity == 0)
+                                    {
+                                        <div class="text-white bg-danger px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">
+                                            Hết hàng
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">
+                                            @product.Factory
+                                        </div>
+                                    }
                                     <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                         <h4 style="font-size: 15px;">
                                             <a href="/Store/Detail/@product.Id">
@@ -98,9 +106,18 @@
                                             <p style="font-size: 15px; text-align: center; width: 100%;" class="text-dark fw-bold mb-3">
                                                 @product.Price.ToString("N0") đ
                                             </p>
-                                            <button data-product-id="@product.Id" class="btnAddToCartDetail mx-auto btn border border-secondary rounded-pill px-3 text-primary">
-                                                <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
-                                            </button>
+                                            @if (product.Quantity == 0)
+                                            {
+                                                <button class="mx-auto btn border border-secondary rounded-pill px-3 text-secondary" disabled>
+                                                    <i class="fa fa-shopping-bag me-2"></i> Hết hàng
+                                                </button>
+                                            }
+                                            else
+                                            {
+                                                <button data-product-id="@product.Id" class="btnAddToCartDetail mx-auto btn border border-secondary rounded-pill px-3 text-primary">
+                                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                                </button>
+                                            }
                                         </div>
                                     </div>
                                 </div>
@@ -112,13 +129,12 @@
         </div>
     </div>
 </div>
-<!-- Single Product End -->
 
 @section Scripts {
     <script>
         $(document).ready(function () {
             const form = $('#filterForm');
-            
+
             form.on('change', 'input, select', function () {
                 var url = form.attr('action') + '?' + form.serialize();
                 $.ajax({
@@ -139,7 +155,7 @@
                     form.find('input[name="name"]').trigger('change');
                 }, 500);
             });
-            
+
             form.on('submit', function (e) {
                 e.preventDefault();
                 form.find('input[name="name"]').trigger('change');

@@ -25,6 +25,9 @@ public class AdminController : Controller
         ViewBag.CountProducts = products?.Count ?? 0;
         ViewBag.CountOrders = orders?.Count ?? 0;
 
+        var deliveredOrders = orders?.Where(o => o.Status == "Delivered").ToList();
+        ViewBag.TotalRevenue = deliveredOrders?.Sum(o => o.TotalPrice) ?? 0;
+
         return View();
     }
 
@@ -67,24 +70,11 @@ public class AdminController : Controller
         return RedirectToAction("Product");
     }
 
-    [HttpGet("Admin/Product/Update/{id}")]
-    public async Task<IActionResult> ProductUpdate(long id)
-    {
-        var client = _httpClientFactory.CreateClient("ApiClient");
-        var response = await client.GetAsync($"Products/{id}");
-        if (response.IsSuccessStatusCode)
-        {
-            var content = await response.Content.ReadAsStringAsync();
-            var product = JsonSerializer.Deserialize<ProductDto>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-            return View(product);
-        }
-        return RedirectToAction("Product");
-    }
 
     [HttpPost("Admin/Product/Update/{id}")]
     public async Task<IActionResult> ProductUpdate(long id, ProductDto product, IFormFile? hoidanitFile)
     {
-        product.Id = id; // Ensure ID matches URL
+        product.Id = id;
 
         if (hoidanitFile != null && hoidanitFile.Length > 0)
         {
@@ -101,10 +91,13 @@ public class AdminController : Controller
         var response = await client.PutAsJsonAsync($"Products/{id}", product);
         if (response.IsSuccessStatusCode)
         {
-            return RedirectToAction("Product");
+            TempData["Message"] = "Cập nhật sản phẩm thành công.";
         }
-
-        return View(product);
+        else
+        {
+            TempData["Message"] = "Cập nhật sản phẩm thất bại.";
+        }
+        return RedirectToAction("Product");
     }
 
     [HttpGet("Admin/Product/Delete/{id}")]
@@ -123,11 +116,6 @@ public class AdminController : Controller
         return RedirectToAction("Product");
     }
 
-    [HttpGet("Admin/Product/Create")]
-    public IActionResult ProductCreate()
-    {
-        return View(new ProductDto());
-    }
 
     [HttpPost("Admin/Product/Create")]
     public async Task<IActionResult> ProductCreate(ProductDto product, IFormFile? hoidanitFile)
@@ -151,10 +139,13 @@ public class AdminController : Controller
         var response = await client.PostAsJsonAsync("Products", product);
         if (response.IsSuccessStatusCode)
         {
-            return RedirectToAction("Product");
+            TempData["Message"] = "Thêm sản phẩm thành công.";
         }
-
-        return View(product);
+        else
+        {
+            TempData["Message"] = "Thêm sản phẩm thất bại.";
+        }
+        return RedirectToAction("Product");
     }
 
     public async Task<IActionResult> Order(int page = 1)
@@ -180,6 +171,36 @@ public class AdminController : Controller
 
         var pagedOrders = orders.Skip((page - 1) * pageSize).Take(pageSize).ToList();
         return View(pagedOrders);
+    }
+
+    [HttpPost("Admin/Order/UpdateStatus/{id}")]
+    public async Task<IActionResult> OrderUpdateStatus(long id, string status)
+    {
+        var client = _httpClientFactory.CreateClient("ApiClient");
+        HttpResponseMessage response;
+
+        if (status == "ReturnApproved")
+        {
+            response = await client.PostAsync($"Orders/{id}/approve-return", null);
+        }
+        else if (status == "Cancelled")
+        {
+            response = await client.PutAsJsonAsync($"Orders/{id}/status", "Cancelled");
+        }
+        else
+        {
+            response = await client.PutAsJsonAsync($"Orders/{id}/status", status);
+        }
+
+        if (response.IsSuccessStatusCode)
+        {
+            TempData["Message"] = "Cập nhật trạng thái đơn hàng thành công.";
+        }
+        else
+        {
+            TempData["Message"] = "Cập nhật trạng thái đơn hàng thất bại.";
+        }
+        return RedirectToAction("Order");
     }
 
     [ActionName("User")]
@@ -222,24 +243,53 @@ public class AdminController : Controller
         return RedirectToAction("User");
     }
 
-    [HttpGet("Admin/User/Update/{id}")]
-    public IActionResult UserUpdate(long id)
+    [HttpPost("Admin/User/Update/{id}")]
+    public async Task<IActionResult> UserUpdate(long id, UserCreateDto user, IFormFile? avatarFile)
     {
-        TempData["Message"] = "Tính năng Cập nhật người dùng đang được phát triển.";
+        user.Avatar = "avatar.jpg";
+        var client = _httpClientFactory.CreateClient("ApiClient");
+        var response = await client.PutAsJsonAsync($"Users/{id}", user);
+        if (response.IsSuccessStatusCode)
+        {
+            TempData["Message"] = "Cập nhật người dùng thành công.";
+        }
+        else
+        {
+            TempData["Message"] = "Cập nhật người dùng thất bại.";
+        }
         return RedirectToAction("User");
     }
 
     [HttpGet("Admin/User/Delete/{id}")]
-    public IActionResult UserDelete(long id)
+    public async Task<IActionResult> UserDelete(long id)
     {
-        TempData["Message"] = "Tính năng Xóa người dùng đang được phát triển.";
+        var client = _httpClientFactory.CreateClient("ApiClient");
+        var response = await client.DeleteAsync($"Users/{id}");
+        if (response.IsSuccessStatusCode)
+        {
+            TempData["Message"] = "Xóa người dùng thành công.";
+        }
+        else
+        {
+            TempData["Message"] = "Xóa người dùng thất bại.";
+        }
         return RedirectToAction("User");
     }
 
-    [HttpGet("Admin/User/Create")]
-    public IActionResult UserCreate()
+    [HttpPost("Admin/User/Create")]
+    public async Task<IActionResult> UserCreate(UserCreateDto user, IFormFile? avatarFile)
     {
-        TempData["Message"] = "Tính năng Thêm mới người dùng đang được phát triển.";
+        user.Avatar = "avatar.jpg";
+        var client = _httpClientFactory.CreateClient("ApiClient");
+        var response = await client.PostAsJsonAsync("Users", user);
+        if (response.IsSuccessStatusCode)
+        {
+            TempData["Message"] = "Thêm người dùng thành công.";
+        }
+        else
+        {
+            TempData["Message"] = "Thêm người dùng thất bại.";
+        }
         return RedirectToAction("User");
     }
 }
