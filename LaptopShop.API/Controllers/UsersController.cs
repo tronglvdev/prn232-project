@@ -1,20 +1,29 @@
 using LaptopShop.BLL.DTOs;
 using LaptopShop.BLL.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace LaptopShop.API.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class UsersController : ControllerBase
 {
     private readonly IUserService _userService;
+    private readonly IConfiguration _config;
 
-    public UsersController(IUserService userService)
+    public UsersController(IUserService userService, IConfiguration config)
     {
         _userService = userService;
+        _config = config;
     }
 
+    [Authorize(Roles = "ADMIN")]
     [HttpGet]
     public async Task<IActionResult> Get()
     {
@@ -30,6 +39,7 @@ public class UsersController : ControllerBase
         return Ok(user);
     }
 
+    [AllowAnonymous]
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] UserCreateDto userDto)
     {
@@ -39,6 +49,7 @@ public class UsersController : ControllerBase
         return CreatedAtAction(nameof(Get), new { id = created.Id }, created);
     }
 
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
     {
@@ -47,7 +58,29 @@ public class UsersController : ControllerBase
         {
             return Unauthorized(new { message = "Email hoặc mật khẩu không chính xác." });
         }
-        return Ok(user);
+
+        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"] ?? ""));
+        var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+        var claims = new[]
+        {
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.Role, user.RoleId == 1 ? "ADMIN" : "USER")
+        };
+
+        var token = new JwtSecurityToken(
+            _config["Jwt:Issuer"],
+            _config["Jwt:Audience"],
+            claims,
+            expires: DateTime.Now.AddMinutes(120),
+            signingCredentials: credentials);
+
+        return Ok(new
+        {
+            Token = new JwtSecurityTokenHandler().WriteToken(token),
+            User = user
+        });
     }
 
     [HttpPut("{id}")]
@@ -59,6 +92,7 @@ public class UsersController : ControllerBase
         return NoContent();
     }
 
+    [Authorize(Roles = "ADMIN")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(long id)
     {

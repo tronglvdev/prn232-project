@@ -156,3 +156,4 @@
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.API/bin/Debug/net8.0/Microsoft.OData.Edm.dll
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.API/bin/Debug/net8.0/Microsoft.OData.ModelBuilder.dll
 /Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.API/bin/Debug/net8.0/Microsoft.Spatial.dll
+/Users/trongle/Documents/PRN232/LaptopShop/LaptopShop.API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

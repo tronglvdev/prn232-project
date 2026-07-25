@@ -99,10 +99,10 @@ public class UserService : IUserService
     {
         var users = await _userRepository.GetAllAsync(u => u.Email == email, includeProperties: "Role");
         var user = users.FirstOrDefault();
-        
+
         if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
         {
-            return null; // Invalid credentials
+            return null;
         }
 
         return new UserDto

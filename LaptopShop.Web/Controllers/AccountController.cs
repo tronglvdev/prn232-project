@@ -31,7 +31,11 @@ public class AccountController : Controller
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                var user = System.Text.Json.JsonSerializer.Deserialize<LaptopShop.Web.Models.DTOs.UserDto>(content, new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                var jsonDoc = System.Text.Json.JsonDocument.Parse(content);
+                var token = jsonDoc.RootElement.GetProperty("token").GetString();
+                var user = System.Text.Json.JsonSerializer.Deserialize<LaptopShop.Web.Models.DTOs.UserDto>(
+                    jsonDoc.RootElement.GetProperty("user").GetRawText(), 
+                    new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
                 var claims = new List<Claim>
                 {
@@ -39,7 +43,8 @@ public class AccountController : Controller
                     new Claim("FullName", user.FullName),
                     new Claim("Avatar", $"/images/avatar/{user.Avatar}"),
                     new Claim("Id", user.Id.ToString()),
-                    new Claim(ClaimTypes.Role, user.RoleId == 1 ? "ADMIN" : "USER")
+                    new Claim(ClaimTypes.Role, user.RoleId == 1 ? "ADMIN" : "USER"),
+                    new Claim("AccessToken", token ?? "")
                 };
                 var claimsIdentity = new ClaimsIdentity(claims, "Cookies");
                 await HttpContext.SignInAsync("Cookies", new ClaimsPrincipal(claimsIdentity));

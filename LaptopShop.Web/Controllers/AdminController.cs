@@ -2,9 +2,11 @@ using System.Net.Http;
 using System.Text.Json;
 using LaptopShop.Web.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LaptopShop.Web.Controllers;
 
+[Authorize(Roles = "ADMIN")]
 public class AdminController : Controller
 {
     private readonly IHttpClientFactory _httpClientFactory;

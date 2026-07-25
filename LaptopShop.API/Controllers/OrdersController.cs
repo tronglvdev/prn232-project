@@ -2,9 +2,11 @@ using LaptopShop.BLL.DTOs;
 using LaptopShop.BLL.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LaptopShop.API.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class OrdersController : ControllerBase
@@ -16,6 +18,7 @@ public class OrdersController : ControllerBase
         _orderService = orderService;
     }
 
+    [Authorize(Roles = "ADMIN")]
     [HttpGet]
     [EnableQuery]
     public async Task<IActionResult> Get()
@@ -46,6 +49,7 @@ public class OrdersController : ControllerBase
         return CreatedAtAction(nameof(Get), new { id = created.Id }, created);
     }
 
+    [Authorize(Roles = "ADMIN")]
     [HttpPut("{id}/status")]
     public async Task<IActionResult> UpdateStatus(long id, [FromBody] string status)
     {
@@ -60,6 +64,7 @@ public class OrdersController : ControllerBase
         return Ok(new { Message = "Return requested successfully" });
     }
 
+    [Authorize(Roles = "ADMIN")]
     [HttpPost("{id}/approve-return")]
     public async Task<IActionResult> ApproveReturn(long id)
     {

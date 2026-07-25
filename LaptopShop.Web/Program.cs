@@ -5,10 +5,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 
 // Setup HttpClient for API calls
+builder.Services.AddTransient<LaptopShop.Web.Handlers.AuthTokenHandler>();
 builder.Services.AddHttpClient("ApiClient", client =>
 {
     client.BaseAddress = new Uri("http://localhost:5028/api/");
-});
+})
+.AddHttpMessageHandler<LaptopShop.Web.Handlers.AuthTokenHandler>();
 
 builder.Services.AddSession(options =>
 {

@@ -2,6 +2,7 @@ using LaptopShop.BLL.DTOs;
 using LaptopShop.BLL.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LaptopShop.API.Controllers;
 
@@ -33,6 +34,7 @@ public class ProductsController : ControllerBase
         return Ok(product);
     }
 
+    [Authorize(Roles = "ADMIN")]
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] ProductDto productDto)
     {
@@ -42,6 +44,7 @@ public class ProductsController : ControllerBase
         return CreatedAtAction(nameof(Get), new { id = created.Id }, created);
     }
 
+    [Authorize(Roles = "ADMIN")]
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(long id, [FromBody] ProductDto productDto)
     {
@@ -51,6 +54,7 @@ public class ProductsController : ControllerBase
         return NoContent();
     }
 
+    [Authorize(Roles = "ADMIN")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(long id)
     {

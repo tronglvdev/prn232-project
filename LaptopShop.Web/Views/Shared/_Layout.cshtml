@@ -77,6 +77,12 @@
                         <li>
                           <a class="dropdown-item" href="/Cart/History">Lịch sử mua hàng</a>
                         </li>
+                        @if (User.IsInRole("ADMIN"))
+                        {
+                            <li>
+                              <a class="dropdown-item" href="/Admin">Trang quản trị</a>
+                            </li>
+                        }
                         <li>
                           <form method="post" action="/Account/Logout">
                             <button class="dropdown-item">Đăng xuất</button>
